@@ -144,6 +144,23 @@ const availableLocales = computed(() => {
           <a href="https://dev.korngold-werkausgabe.de/de/about/privacy">Datenschutz</a>
         </div>
       </div>
+      <div class="row my-2 align-items-center justify-content-around">
+        <div class="col-10 col-sm-5 col-md-4 col-lg-3">
+          <a href="https://www.uni-frankfurt.de">
+            <img class="img-fluid" src="./assets/gu-logo.png" />
+          </a>
+        </div>
+        <div class="col-10 col-sm-5 col-md-4 col-lg-3">
+          <a href="https://www.adwmainz.de/">
+            <img class="img-fluid" src="./assets/adw-logo.png" />
+          </a>
+        </div>
+        <div class="col-10 col-sm-5 col-md-4 col-lg-3">
+          <a href="https://www.akademienunion.de/">
+            <img class="img-fluid" src="./assets/union-logo.png" />
+          </a>
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm col-md-last col-lg-normal">© 2021–2024 Erich Wolfgang Korngold Werkausgabe</div>
       </div>
