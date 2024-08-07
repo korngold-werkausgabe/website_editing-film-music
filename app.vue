@@ -58,17 +58,17 @@ const availableLocales = computed(() => {
       <h2 id="cfp" class="mb-3">{{ $t('headlineCfp') }}</h2>
       <div class="container">
         <div class="row row-border pt-3">
-          <div class="col-sm col-md-last col-lg-normal font-center">
-            <h3 class="cfp">{{ $t('cfpInfo.place.title') }}</h3>
-            <p class="light">{{ $t('cfpInfo.place.value') }}</p>
+          <div class="col-sm col-md-last col-lg-normal">
+            <h3 class="cfp font-center">{{ $t('cfpInfo.place.title') }}</h3>
+            <p class="light font-center">{{ $t('cfpInfo.place.value') }}</p>
+          </div>
+          <div class="col-sm col-md-last col-lg-normal">
+            <h3 class="cfp  font-center">{{ $t('cfpInfo.date.title') }}</h3>
+            <p class="light font-center">{{ $t('cfpInfo.date.value') }}</p>
           </div>
           <div class="col-sm col-md-last col-lg-normal font-center">
-            <h3 class="cfp">{{ $t('cfpInfo.date.title') }}</h3>
-            <p class="light">{{ $t('cfpInfo.date.value') }}</p>
-          </div>
-          <div class="col-sm col-md-last col-lg-normal font-center">
-            <h3 class="cfp">{{ $t('cfpInfo.deadline.title') }}</h3>
-            <p class="light">{{ $t('cfpInfo.deadline.value') }}</p>
+            <h3 class="cfp font-center">{{ $t('cfpInfo.deadline.title') }}</h3>
+            <p class="light font-center">{{ $t('cfpInfo.deadline.value') }}</p>
           </div>
 
         </div>
