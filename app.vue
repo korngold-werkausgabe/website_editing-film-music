@@ -137,7 +137,7 @@ const availableLocales = computed(() => {
     </div>
 
 
-    <footer class="sticky mt-5 mx-lg-6 mx-md-5 mx-sm-3">
+    <footer class="sticky mt-5 mb-3 mx-lg-6 mx-md-5 mx-sm-3">
       <div class="row my-2">
         <div class="col-sm col-md-last col-lg-normal">
           <a href="https://dev.korngold-werkausgabe.de/de/about/imprint" class="me-3">Impressum</a>
