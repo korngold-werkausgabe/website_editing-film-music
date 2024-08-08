@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'usebootstrap'],
   ssr: false,
+  nitro:{
+    preset: 'static'
+  },
   app:{
     head: {
       title: 'Editing Film Music',
@@ -15,7 +18,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
     },
-    baseURL: '/editing-film-music/',
+    baseURL: 'https://korngold-werkausgabe.github.io/editing-film-music/',
   },
   css: ["~/assets/custom.scss"],
   vite: {
