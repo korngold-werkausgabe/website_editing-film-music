@@ -5,7 +5,10 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/i18n', 'usebootstrap'],
   ssr: false,
   nitro:{
-    preset: 'static'
+    preset: 'static',
+    prerender: {
+      failOnError: false,
+    },
   },
   app:{
     head: {
