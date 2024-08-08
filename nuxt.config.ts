@@ -4,12 +4,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'usebootstrap'],
   ssr: false,
-  nitro:{
-    preset: 'static',
-    prerender: {
-      failOnError: false,
-    },
-  },
   app:{
     head: {
       title: 'Editing Film Music',
