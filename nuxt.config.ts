@@ -14,7 +14,8 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
-    }
+    },
+    baseURL: 'https://korngold-werkausgabe.github.io/editing-film-music/',
   },
   css: ["~/assets/custom.scss"],
   vite: {
