@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n', 'usebootstrap'],
+  modules: ['@nuxtjs/i18n', 'usebootstrap', "nuxt-security"],
   ssr: true,
   app:{
     head: {
@@ -16,6 +16,22 @@ export default defineNuxtConfig({
       ],
     },
     baseURL: '/website_editing-film-music/',
+  },
+  security: {
+    ssg: {
+      meta: true, // Enables CSP as a meta tag in SSG mode
+      hashScripts: true, // Enables CSP hash support for scripts in SSG mode
+      hashStyles: false, // Disables CSP hash support for styles in SSG mode (recommended)
+      exportToPresets: true // Export security headers to Nitro presets
+    },
+    sri: true,
+    headers: {
+      contentSecurityPolicy: {
+        'script-src': [
+          "'strict-dynamic'", // Modify with your custom CSP sources
+        ]
+      }
+    }
   },
   css: ["~/assets/custom.scss"],
   vite: {
