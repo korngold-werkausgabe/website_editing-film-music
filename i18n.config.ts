@@ -19,7 +19,7 @@ export default defineI18nConfig(() => ({
         },
         date: {
           title: "Datum",
-          value: "22.-23. November 2024"
+          value: "22.–23. November 2024"
         },
         deadline: {
           title: "Beiträge bis",
