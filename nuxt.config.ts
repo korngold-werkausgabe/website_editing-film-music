@@ -3,13 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'usebootstrap'],
-  ssr: false,
-  nitro:{
-    preset: 'static',
-    prerender: {
-      failOnError: false,
-    },
-  },
+  ssr: true,
   app:{
     head: {
       title: 'Editing Film Music',
@@ -21,6 +15,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
     },
+    baseURL: '/website_editing-film-music/',
   },
   css: ["~/assets/custom.scss"],
   vite: {
