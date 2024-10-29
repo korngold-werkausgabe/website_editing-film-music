@@ -2,9 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n', 'usebootstrap', "nuxt-security"],
+  modules: ['@nuxtjs/i18n', 'usebootstrap', "nuxt-security", '@nuxt/scripts'],
   ssr: true,
-  app:{
+  app: {
     head: {
       title: 'Editing Film Music',
       meta: [
@@ -12,7 +12,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Website for the international conference Editing Film Music, organised by the Erich Wolfgang Korngold Werkausgabe.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       ],
     },
     baseURL: '/website_editing-film-music/',
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'script-src': [
-          "'strict-dynamic'", // Modify with your custom CSP sources
+          "'strict-dynamic'",
         ]
       }
     }
@@ -48,15 +48,16 @@ export default defineNuxtConfig({
     locales: [
       {
         code: "en",
-        iso: "en-US",
+        language: "en-US",
         name: "English",
       },
       {
         code: "de",
-        iso: "de-DE",
+        language: "de-DE",
         name: "Deutsch",
       },
     ],
     defaultLocale: "de",
   },
+  robots: { robotsTxt: false }
 })
