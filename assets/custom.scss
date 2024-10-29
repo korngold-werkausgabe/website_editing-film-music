@@ -12,11 +12,13 @@ $spacers: (
 body {
     background-color: white;
     font-family: Montserrat, sans-serif;
+    color: $primary;
 }
 
 nav {
     border-bottom: 1px solid $secondary;
     background-color: white;
+    color: $primary;
 }
 
 footer {
@@ -25,6 +27,7 @@ footer {
 
 h1, h2, h3, h4 {
     font-family: "Merriweather", serif;
+    color: $primary-light-2;
 }
 
 h1.main {
@@ -38,6 +41,14 @@ h1.sub {
     font-weight: 200;
     letter-spacing: .1em;
     margin-bottom: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
 }
 
 a{
@@ -61,6 +72,11 @@ p {
     font-stretch: semi-expanded;
  }
 
+ .it {
+    font-stretch: semi-expanded;
+    font-style: italic;
+ }
+
  .light {
     font-weight: 100;
  }
@@ -80,3 +96,16 @@ p {
     font-stretch: semi-expanded;
     font-weight: 300;
  }
+
+  .primary {
+    color: $primary-light-2;
+  }
+
+  .secondary {
+    color: $secondary;
+  }
+
+  .keynote {
+    border: 1px solid $secondary;
+    padding: 1em;
+  }

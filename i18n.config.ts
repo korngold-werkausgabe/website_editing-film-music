@@ -1,11 +1,13 @@
 export default defineI18nConfig(() => ({
   legacy: false,
+  autoImportTranslationFunctions: true,
   messages: {
     de: {
-      nav : {
+      nav: {
         home: "Home",
         cfp: "Call for Papers",
         program: "Programm",
+        plan: "Lageplan",
         contact: "Kontakt"
       },
       headlineMain: "Edition von Filmmusik",
@@ -36,54 +38,77 @@ export default defineI18nConfig(() => ({
           "Multimediale Präsentation und Vermittlung edierter Filmmusik (z.B. Klanginstallationen, interaktive Performances)",
           "Interdisziplinäre Perspektiven aus Theater-, Film- und Medienwissenschaften",
           "Hybride und digitale Editionen als Formen von Multimedialität",
-        ]},
+        ]
+      },
       msgCfp2: "Wir laden Wissenschaftler:innen aus den Bereichen {disciplines} ein, Beitragsvorschläge einzureichen. Neben Einzelvorträgen sind auch Vorschläge für Sektionen, Panels oder interaktive Workshops willkommen. \n Bitte senden Sie Ihr {expose}  (max. 300 Wörter) bis zum {date} an: {mail} \n Die Tagungssprachen sind Deutsch und Englisch. Eine Publikation der Tagungsbeiträge ist geplant. Für weitere Informationen wenden Sie sich bitte an: {mail}.",
       headlinePrgrm: "Programm",
-      msgPrgrm: "Wird noch bekannt gegeben.",
+      prgrm: {
+        keynote: "Keynote",
+        day1: "Freitag, 22. November 2024",
+        day2: "Samstag, 23. November 2024",
+        room1: "NG 731",
+        room2: "IG 311",
+        pause1: "Kaffeepause",
+        pause2: "Mittagspause",
+        roundtable: "Roundtable",
+      },
+      headlinePlan: "Lageplan",
       headlineContact: "Kontakt",
       msgContact: "Bei Fragen und für weitere Informationen wenden Sie sich gerne an {mail}."
-      },
-      en: {
-        nav : {
-          home: "Home",
-          cfp: "Call for Papers",
-          program: "Program",
-          contact: "Contact"
-        },
-        headlineMain: "Editing Film Music",
-        headlineSub: "Challenges of Multimedia",
-        msg: "The edition of Erich Wolfgang Korngold's film music is a central part of the Werkausgabe dedicated to the composer ({website}). The undertaking presents unique challenges in multimediality, inviting an interdisciplinary exploration of this complex subject.",
-        headlineCfp: "Call for Papers",
-        cfpInfo: {
-          place: {
-            title: "Venue",
-            value: "Goethe University Frankfurt/M."
-          },
-          date: {
-            title: "Date",
-            value: "22–23 November 2024"
-          },
-          deadline: {
-            title: "Deadline",
-            value: "19 August 2024"
-          }
-        },
-        msgCfp1: "Film is a multimedia phenomenon. A soundtrack alone comprises music along with other auditory elements such as spoken dialogue. On the visual level, it encompasses images, movement, interaction, and other performative parameters. These aspects open up new editorial possibilities for researchers in various disciplines. In addition to traditional editing work, considerations of multimedia interaction/synchronisation and the reconstruction of historical production practices must be addressed, which in turn means exploring the potential of digital or hybrid presentation formats for effective representation. \n The conference aims to discuss the current state of research on the multimedia edition of film music, provide new impulses, and develop innovative models. One key question to be addressed is how multimedia works and multimedia editions influence each other. \n In addition to {vortrag-en} on historical, theoretical, and methodological aspects, an interactive workshop will address practical issues related to the digital edition and presentation of film music. Contributions may include {types-en}.",
-        topicsCfp: {
-          preline: "Potential topics include, but are not limited to:",
-          topics: [
-            "Editorial challenges in multimedia editions of film music",
-            "Film music editions as part of (historico-critical) complete and collected editions",
-            "Digital tools and methods for editing film music (e.g. synchronisation of music, image, and text/dialogue; reconstruction of historical contexts)",
-            "Multimedia presentation and dissemination of edited film music (e.g. sound installations, interactive performances)",
-            "Interdisciplinary perspectives from theatre, film, and media studies",
-            "Hybrid and digital editions as forms of multimediality",
-          ]},
-        msgCfp2: "We invite scholars from the fields of {disciplines-en} to submit proposals. Submissions for individual papers, sections, panels, or interactive workshops are welcome. \n Please send your abstract (maximum 300 words) by {date-en} to {mail}. \n The conference languages are German and English. Publication of the conference proceedings is planned. \n For further information, please contact {mail}.",
-        headlinePrgrm: "Program",
-        msgPrgrm: "To be announced.",
-        headlineContact: "Contact",
-      msgContact: "If you have any questions or require further information, please contact us at {mail}."
-      }
     },
+    en: {
+      nav: {
+        home: "Home",
+        cfp: "Call for Papers",
+        program: "Program",
+        plan: "Site plan",
+        contact: "Contact"
+      },
+      headlineMain: "Editing Film Music",
+      headlineSub: "Challenges of Multimedia",
+      msg: "The edition of Erich Wolfgang Korngold's film music is a central part of the Werkausgabe dedicated to the composer ({website}). The undertaking presents unique challenges in multimediality, inviting an interdisciplinary exploration of this complex subject.",
+      headlineCfp: "Call for Papers",
+      cfpInfo: {
+        place: {
+          title: "Venue",
+          value: "Goethe University Frankfurt/M."
+        },
+        date: {
+          title: "Date",
+          value: "22–23 November 2024"
+        },
+        deadline: {
+          title: "Deadline",
+          value: "19 August 2024"
+        }
+      },
+      msgCfp1: "Film is a multimedia phenomenon. A soundtrack alone comprises music along with other auditory elements such as spoken dialogue. On the visual level, it encompasses images, movement, interaction, and other performative parameters. These aspects open up new editorial possibilities for researchers in various disciplines. In addition to traditional editing work, considerations of multimedia interaction/synchronisation and the reconstruction of historical production practices must be addressed, which in turn means exploring the potential of digital or hybrid presentation formats for effective representation. \n The conference aims to discuss the current state of research on the multimedia edition of film music, provide new impulses, and develop innovative models. One key question to be addressed is how multimedia works and multimedia editions influence each other. \n In addition to {vortrag-en} on historical, theoretical, and methodological aspects, an interactive workshop will address practical issues related to the digital edition and presentation of film music. Contributions may include {types-en}.",
+      topicsCfp: {
+        preline: "Potential topics include, but are not limited to:",
+        topics: [
+          "Editorial challenges in multimedia editions of film music",
+          "Film music editions as part of (historico-critical) complete and collected editions",
+          "Digital tools and methods for editing film music (e.g. synchronisation of music, image, and text/dialogue; reconstruction of historical contexts)",
+          "Multimedia presentation and dissemination of edited film music (e.g. sound installations, interactive performances)",
+          "Interdisciplinary perspectives from theatre, film, and media studies",
+          "Hybrid and digital editions as forms of multimediality",
+        ]
+      },
+      msgCfp2: "We invite scholars from the fields of {disciplines-en} to submit proposals. Submissions for individual papers, sections, panels, or interactive workshops are welcome. \n Please send your abstract (maximum 300 words) by {date-en} to {mail}. \n The conference languages are German and English. Publication of the conference proceedings is planned. \n For further information, please contact {mail}.",
+      headlinePrgrm: "Program",
+      prgrm: {
+        keynote: "Keynote",
+        day1: "Friday, 22 November 2024",
+        day2: "Saturday, 23 November 2024",
+        room1: "NG 731",
+        room2: "IG 311",
+        pause1: "Coffee break",
+        pause2: "Lunch break",
+        roundtable: "Roundtable",
+      },
+      headlinePlan: "Site plan",
+      headlineContact: "Contact",
+      msgContact: "If you have any questions or require further information, please contact us at {mail}."
+    }
+  },
 }))

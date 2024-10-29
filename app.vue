@@ -1,9 +1,33 @@
 <script setup>
+/* useScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+useScript('https://code.jquery.com/jquery-3.2.1.slim.min.js') */
 const { locale, locales, setLocale } = useI18n()
 
 const availableLocales = computed(() => {
   return (locales.value).filter(i => i.code !== locale.value)
 })
+
+const data = {
+  program: {
+    key: { speaker: 'Ben Winters', title: 'Reflections on the Multimedia Film-Score Edition and the Textual Instability of Film', time: '13:30–14:45', abstract: 'Lorem ipsum' },
+    fr1: [{ speaker: 'Derek Greten-Harrison', title: 'TBA', time: '14:45', abstract: 'Lorem ipsum' },
+    { speaker: 'Simone Nowicki', title: 'Edition von Filmmusik Herausforderungen der Multimedialität (Un-) Sichtbarer Krach: Die Marginalisierung und Visualisierung von Geräuschemacher*innen in der Edition von Filmmusik', time: '15:30', abstract: 'Lorem ipsum' }],
+    fr2: [{ speaker: 'Roberto Calabretto, Luca Cossettini', title: 'The New Musical Writings for Cinema: History, Sources and Compositional Practices', time: '16:45', abstract: 'Lorem ipsum' },
+    { speaker: 'Jörg Holzmann', title: 'Tonfilme, Interpretationsforschung und die Herausforderungen der Notation von Bewegungen', time: '17:30', abstract: 'Lorem ipsum' },],
+    sa1: [
+      { speaker: 'Oliver Huck', title: 'Eine Phänomenologie der „Stummfilm-Partitur“. Prolegomena zur Edition von Filmmusik', time: '9:00', abstract: 'Lorem ipsum' },
+      { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: '9:45', abstract: 'Lorem ipsum' },
+
+    ],
+    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Edition of ›The Adventures of Robin Hood‹', time: '11:00', abstract: 'Lorem ipsum' },
+    { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: '11:45', abstract: 'Lorem ipsum' }],
+    sa3: [
+      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition undFilmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: '14:00', abstract: 'Lorem ipsum' },
+      { speaker: 'Tessa Gengnagel', title: 'Singende Cowboys, Superstrukturen und die Stille in der Nacht', time: '14:45', abstract: 'Lorem ipsum' },
+      { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: '15:30', abstract: 'Lorem ipsum' }
+    ]
+  }
+}
 </script>
 
 <template>
@@ -26,10 +50,10 @@ const availableLocales = computed(() => {
               <a class="nav-link active" aria-current="page" href="/">{{ $t('nav.home') }}</a>
             </li>
             <li class="nav-item me-2">
-              <a class="nav-link" href="#cfp">{{ $t('nav.cfp') }}</a>
+              <a class="nav-link" href="#prgrm">{{ $t('nav.program') }}</a>
             </li>
             <li class="nav-item me-2">
-              <a class="nav-link" href="#prgrm">{{ $t('nav.program') }}</a>
+              <a class="nav-link" href="#prgrm">{{ $t('nav.plan') }}</a>
             </li>
             <li class="nav-item me-2">
               <a class="nav-link" href="#contact">{{ $t('nav.contact') }}</a>
@@ -54,77 +78,75 @@ const availableLocales = computed(() => {
       </i18n-t>
     </div>
 
-    <div class="mt-5 mb-3 mx-lg-6 mx-md-5 mx-sm-3">
-      <h2 id="cfp" class="mb-3">{{ $t('headlineCfp') }}</h2>
-      <div class="container">
-        <div class="row row-border pt-3">
-          <div class="col-sm col-md-last col-lg-normal">
-            <h3 class="cfp font-center">{{ $t('cfpInfo.place.title') }}</h3>
-            <p class="light font-center">{{ $t('cfpInfo.place.value') }}</p>
-          </div>
-          <div class="col-sm col-md-last col-lg-normal">
-            <h3 class="cfp  font-center">{{ $t('cfpInfo.date.title') }}</h3>
-            <p class="light font-center">{{ $t('cfpInfo.date.value') }}</p>
-          </div>
-          <div class="col-sm col-md-last col-lg-normal font-center">
-            <h3 class="cfp font-center">{{ $t('cfpInfo.deadline.title') }}</h3>
-            <p class="light font-center">{{ $t('cfpInfo.deadline.value') }}</p>
-          </div>
+    <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
+      <h2 id="prgrm" class="mb-3">{{ $t('headlinePrgrm') }}</h2>
 
-        </div>
-      </div>
-      <i18n-t keypath="msgCfp1" tag="p">
-        <template v-slot:vortrag>
-          <span class="bold">Vorträgen (max. 30 Minuten)</span>
-        </template>
-        <template v-slot:vortrag-en>
-          <span class="bold">presentations (maximum 30 minutes)</span>
-        </template>
-        <template v-slot:types>
-          <span class="bold">Referaten</span> auch <span class="bold">Installationen</span>, <span
-            class="bold">Modelle</span> und <span class="bold">interaktive Anwendungen</span>
-        </template>
-        <template v-slot:types-en>
-          <span class="bold">papers</span>, <span class="bold">installations</span>, <span class="bold">models</span>,
-          and <span class="bold">interactive applications</span>
-        </template>
-      </i18n-t>
-      <p>{{ $t('topicsCfp.preline') }}</p>
-
-      <ul>
-        <li class="mb-2" v-for="topic in $tm('topicsCfp.topics')" :key="topic">{{ topic }}</li>
-      </ul>
-
-      <i18n-t keypath="msgCfp2" tag="p">
-        <template v-slot:disciplines>
-          <span class="bold">Musikwissenschaft</span>, <span class="bold">Film-</span>, <span class="bold">Theater- und
-            Medienwissenschaften</span> sowie <span class="bold">Digital Humanities</span>
-        </template>
-        <template v-slot:disciplines-en>
-          <span class="bold">musicology</span>, <span class="bold">film studies</span>, <span class="bold">theatre and
-            media studies</span>, and <span class="bold">digital humanities</span>
-        </template>
-        <template v-slot:mail>
-          <a href="mailto:editing-film-music@korngold-werkausgabe.de">editing-film-music@korngold-werkausgabe.de</a>
-        </template>
-        <template v-slot:expose>
-          <span class="bold">Exposé</span>
-        </template>
-        <template v-slot:expose-en>
-          <span class="bold">abstract</span>
-        </template>
-        <template v-slot:date>
-          <span class="bold">19.08.2024</span>
-        </template>
-        <template v-slot:date-en>
-          <span class="bold">19 August 2024</span>
-        </template>
-      </i18n-t>
+      <!-- Day 1 -->
+      <h3 class="mt-5 my-3 secondary">{{ $t('prgrm.day1') }}</h3>
+      <h4>Goethe-Universität Frankfurt am Main || Uni-Campus Westend || {{ $t('prgrm.room1') }}</h4>
+      <!-- Keynote -->
+      <Container class="mt-5 mb-3 keynote">
+        <h4 class="mb-3">{{ $t('prgrm.keynote') }}</h4>
+        <Row>
+          <Col col="1">{{ data.program.key.time }}</Col>
+          <Col col="3">{{ data.program.key.speaker }}</Col>
+          <Col col="8">{{ data.program.key.title }}</Col>
+        </Row>
+      </Container>
+      <!-- Block 1 -->
+      <Container class="my-4">
+        <Row class="mb-2" v-for="(entry, index) in data.program.fr1" :key="index">
+          <Col col="1">{{ entry.time }}</Col>
+          <Col col="3">{{ entry.speaker }}</Col>
+          <Col>{{ entry.title }}</Col>
+        </Row>
+      </Container>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
+      <Container class="my-4">
+        <Row class="mb-2" v-for="(entry, index) in data.program.fr2" :key="index">
+          <Col col="1">{{ entry.time }}</Col>
+          <Col col="3">{{ entry.speaker }}</Col>
+          <Col>{{ entry.title }}</Col>
+        </Row>
+      </Container>
+      <!-- Day2 -->
+      <h3 class="mt-5 mb-3 secondary">{{ $t('prgrm.day2') }}</h3>
+      <h4 class="mb-5 ">Goethe-Universität Frankfurt am Main || Uni-Campus Westend || {{ $t('prgrm.room2') }}
+      </h4>
+      <!-- Block 2 -->
+      <Container class="my-4">
+        <Row class="mb-2" v-for="(entry, index) in data.program.sa1" :key="index">
+          <Col col="1">{{ entry.time }}</Col>
+          <Col col="3">{{ entry.speaker }}</Col>
+          <Col col="8">{{ entry.title }}</Col>
+        </Row>
+      </Container>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
+      <Container class="my-4">
+        <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
+          <Col col="1">{{ entry.time }}</Col>
+          <Col col="3">{{ entry.speaker }}</Col>
+          <Col col="8">{{ entry.title }}</Col>
+        </Row>
+      </Container>
+      <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
+      <!-- Block 3 -->
+      <Container class="my-4">
+        <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
+          <Col col="1">{{ entry.time }}</Col>
+          <Col col="3">{{ entry.speaker }}</Col>
+          <Col col="8">{{ entry.title }}</Col>
+        </Row>
+      </Container>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
+      <h4 class="my-4 primary">16:45 – 17:30 {{ $t('prgrm.roundtable') }}</h4>
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
-      <h2 id="prgrm" class="mb-3">{{ $t('headlinePrgrm') }}</h2>
-      <p>{{ $t('msgPrgrm') }}</p>
+      <h2 id="contact" class="mb-3">{{ $t('headlinePlan') }}</h2>
+      <a href="https://www.uni-frankfurt.de/86262292/lage-und-anfahrtsplan-campus-westend-stand-juni-2024.pdf">
+        <img class="img-fluid" src="./assets/GU_Lageplan_Campus_Westend_crop.png" />
+      </a>
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
@@ -135,7 +157,6 @@ const availableLocales = computed(() => {
         </template>
       </i18n-t>
     </div>
-
 
     <footer class="sticky mt-5 mb-3 mx-lg-6 mx-md-5 mx-sm-3">
       <div class="row my-2">
@@ -166,4 +187,5 @@ const availableLocales = computed(() => {
       </div>
     </footer>
   </div>
+
 </template>

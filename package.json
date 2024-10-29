@@ -10,10 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/scripts": "^0.9.5",
     "@nuxtjs/i18n": "^8.3.3",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.13.2",
     "nuxt-security": "^2.0.0-rc.9",
-    "usebootstrap": "^3.5.19",
+    "usebootstrap": "^3.5.99",
     "vite": "^5.3.5",
     "vue": "latest"
   },
