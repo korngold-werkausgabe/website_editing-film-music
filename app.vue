@@ -53,7 +53,7 @@ const data = {
               <a class="nav-link" href="#prgrm">{{ $t('nav.program') }}</a>
             </li>
             <li class="nav-item me-2">
-              <a class="nav-link" href="#prgrm">{{ $t('nav.plan') }}</a>
+              <a class="nav-link" href="#plan">{{ $t('nav.plan') }}</a>
             </li>
             <li class="nav-item me-2">
               <a class="nav-link" href="#contact">{{ $t('nav.contact') }}</a>
@@ -143,7 +143,7 @@ const data = {
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
-      <h2 id="contact" class="mb-3">{{ $t('headlinePlan') }}</h2>
+      <h2 id="plan" class="mb-3">{{ $t('headlinePlan') }}</h2>
       <a href="https://www.uni-frankfurt.de/86262292/lage-und-anfahrtsplan-campus-westend-stand-juni-2024.pdf">
         <img class="img-fluid" src="./assets/GU_Lageplan_Campus_Westend_crop.png" />
       </a>
