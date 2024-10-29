@@ -71,11 +71,13 @@ const data = {
     <div class="my-3 mx-lg-6 mx-md-5 mx-sm-3">
       <h1 class="main">{{ $t('headlineMain') }} </h1>
       <h1 class="sub">{{ $t('headlineSub') }}</h1>
-      <i18n-t keypath="msg" tag="p">
+      <i18n-t keypath="msg1" tag="p">
         <template v-slot:website>
           <a href="https://www.korngold-werkausgabe.de">korngold-werkausgabe.de</a>
         </template>
       </i18n-t>
+      <p>{{ $t('msg2') }}</p>
+      <p>{{ $t('msg3') }}</p>
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
