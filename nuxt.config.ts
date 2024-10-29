@@ -28,7 +28,8 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'script-src': [
-          "'strict-dynamic'",
+          /* "'strict-dynamic'", */
+          "'self'", "'unsafe-inline'", "'unsafe-eval'"
         ]
       }
     }
