@@ -81,15 +81,12 @@ const data = {
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
       <h2 id="prgrm" class="mb-3">{{ $t('headlinePrgrm') }}</h2>
 
-      <h3>Veranstatlungsort</h3>
-      <p>Goethe-Universität Frankfurt am Main</p>
-      <p>Unicampus Westend</p>
       <!-- Day 1 -->
-      <h3 class="my-3 secondary">{{ $t('prgrm.day1') }}</h3>
-      <p>{{ $t('prgrm.room1') }}</p>
+      <h3 class="mt-5 my-3 secondary">{{ $t('prgrm.day1') }}</h3>
+      <h4>Goethe-Universität Frankfurt am Main || Uni-Campus Westend || {{ $t('prgrm.room1') }}</h4>
       <!-- Keynote -->
-      <h4 class="mb-3 primary">{{ $t('prgrm.keynote') }}</h4>
-      <Container class="mb-3 keynote">
+      <Container class="mt-5 mb-3 keynote">
+        <h4 class="mb-3">{{ $t('prgrm.keynote') }}</h4>
         <Row>
           <Col col="1">{{ data.program.key.time }}</Col>
           <Col col="3">{{ data.program.key.speaker }}</Col>
@@ -104,7 +101,7 @@ const data = {
           <Col>{{ entry.title }}</Col>
         </Row>
       </Container>
-      <p>{{ $t('prgrm.pause1') }}</p>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.fr2" :key="index">
           <Col col="1">{{ entry.time }}</Col>
@@ -113,8 +110,9 @@ const data = {
         </Row>
       </Container>
       <!-- Day2 -->
-      <h3 class="mt-4 mb-3 secondary">{{ $t('prgrm.day2') }}</h3>
-      <p>{{ $t('prgrm.room2') }}</p>
+      <h3 class="mt-5 mb-3 secondary">{{ $t('prgrm.day2') }}</h3>
+      <h4 class="mb-5 ">Goethe-Universität Frankfurt am Main || Uni-Campus Westend || {{ $t('prgrm.room2') }}
+      </h4>
       <!-- Block 2 -->
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa1" :key="index">
@@ -123,7 +121,7 @@ const data = {
           <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
-      <p>{{ $t('prgrm.pause1') }}</p>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
           <Col col="1">{{ entry.time }}</Col>
@@ -131,7 +129,7 @@ const data = {
           <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
-      <p>{{ $t('prgrm.pause2') }}</p>
+      <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
       <!-- Block 3 -->
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
@@ -140,7 +138,7 @@ const data = {
           <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
-      <p>{{ $t('prgrm.pause1') }}</p>
+      <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <h4 class="my-4 primary">16:45 – 17:30 {{ $t('prgrm.roundtable') }}</h4>
     </div>
 
