@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n', 'usebootstrap', "nuxt-security", '@nuxt/scripts'],
+  modules: ['@nuxtjs/i18n', 'usebootstrap', "nuxt-security", '@nuxt/scripts', '@i2d/nuxt-pdf-frame'],
   ssr: true,
   app: {
     head: {
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
           additionalData: '@use "~/assets/_variables.scss" as *;'
         }
       }
-    }
+    },
   },
   i18n: {
     vueI18n: "./i18n.config.ts",

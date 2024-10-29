@@ -7,6 +7,7 @@ export default defineI18nConfig(() => ({
         home: "Home",
         cfp: "Call for Papers",
         program: "Programm",
+        plan: "Lageplan",
         contact: "Kontakt"
       },
       headlineMain: "Edition von Filmmusik",
@@ -51,6 +52,7 @@ export default defineI18nConfig(() => ({
         pause2: "Mittagspause",
         roundtable: "Roundtable",
       },
+      headlinePlan: "Lageplan",
       headlineContact: "Kontakt",
       msgContact: "Bei Fragen und für weitere Informationen wenden Sie sich gerne an {mail}."
     },
@@ -59,6 +61,7 @@ export default defineI18nConfig(() => ({
         home: "Home",
         cfp: "Call for Papers",
         program: "Program",
+        plan: "Site plan",
         contact: "Contact"
       },
       headlineMain: "Editing Film Music",
@@ -103,6 +106,7 @@ export default defineI18nConfig(() => ({
         pause2: "Lunch break",
         roundtable: "Roundtable",
       },
+      headlinePlan: "Site plan",
       headlineContact: "Contact",
       msgContact: "If you have any questions or require further information, please contact us at {mail}."
     }

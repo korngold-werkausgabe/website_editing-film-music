@@ -1,6 +1,6 @@
 <script setup>
-useScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
-useScript('https://code.jquery.com/jquery-3.2.1.slim.min.js')
+/* useScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+useScript('https://code.jquery.com/jquery-3.2.1.slim.min.js') */
 const { locale, locales, setLocale } = useI18n()
 
 const availableLocales = computed(() => {
@@ -53,6 +53,9 @@ const data = {
               <a class="nav-link" href="#prgrm">{{ $t('nav.program') }}</a>
             </li>
             <li class="nav-item me-2">
+              <a class="nav-link" href="#prgrm">{{ $t('nav.plan') }}</a>
+            </li>
+            <li class="nav-item me-2">
               <a class="nav-link" href="#contact">{{ $t('nav.contact') }}</a>
             </li>
           </ul>
@@ -77,6 +80,10 @@ const data = {
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
       <h2 id="prgrm" class="mb-3">{{ $t('headlinePrgrm') }}</h2>
+
+      <h3>Veranstatlungsort</h3>
+      <p>Goethe-Universität Frankfurt am Main</p>
+      <p>Unicampus Westend</p>
       <!-- Day 1 -->
       <h3 class="my-3 secondary">{{ $t('prgrm.day1') }}</h3>
       <p>{{ $t('prgrm.room1') }}</p>
@@ -138,6 +145,13 @@ const data = {
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
+      <h2 id="contact" class="mb-3">{{ $t('headlinePlan') }}</h2>
+      <a href="https://www.uni-frankfurt.de/86262292/lage-und-anfahrtsplan-campus-westend-stand-juni-2024.pdf">
+        <img class="img-fluid" src="./assets/GU_Lageplan_Campus_Westend_crop.png" />
+      </a>
+    </div>
+
+    <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
       <h2 id="contact" class="mb-3">{{ $t('headlineContact') }}</h2>
       <i18n-t keypath="msgContact" tag="p">
         <template v-slot:mail>
@@ -145,7 +159,6 @@ const data = {
         </template>
       </i18n-t>
     </div>
-
 
     <footer class="sticky mt-5 mb-3 mx-lg-6 mx-md-5 mx-sm-3">
       <div class="row my-2">
