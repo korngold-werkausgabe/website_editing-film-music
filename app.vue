@@ -134,7 +134,7 @@ const data = {
       <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
       <!-- Block 3 -->
       <Container class="my-4">
-        <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
+        <Row class="mb-2" v-for="(entry, index) in data.program.sa3" :key="index">
           <Col col="1">{{ entry.time }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
           <Col col="8">{{ entry.title }}</Col>
