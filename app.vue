@@ -19,11 +19,11 @@ const data = {
       { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: '9:45', abstract: 'Lorem ipsum' },
 
     ],
-    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Edition of ›The Adventures of Robin Hood‹', time: '11:00', abstract: 'Lorem ipsum' },
+    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: '11:00', abstract: 'Lorem ipsum' },
     { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: '11:45', abstract: 'Lorem ipsum' }],
     sa3: [
-      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition undFilmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: '14:00', abstract: 'Lorem ipsum' },
-      { speaker: 'Tessa Gengnagel', title: 'Singende Cowboys, Superstrukturen und die Stille in der Nacht', time: '14:45', abstract: 'Lorem ipsum' },
+      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: '14:00', abstract: 'Lorem ipsum' },
+      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: '14:45', abstract: 'Lorem ipsum' },
       { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: '15:30', abstract: 'Lorem ipsum' }
     ]
   }
