@@ -26,7 +26,7 @@ const data = {
       { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
       { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }
     ]
-  }
+  },
 }
 </script>
 
@@ -143,6 +143,24 @@ const data = {
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <h4 class="my-4 primary">{{ $d(new Date(0, 0, 0, 16, 45, 0), 'short') }}–{{ $d(new Date(0, 0, 0, 17, 30, 0),
         'short') }} {{ $t('prgrm.roundtable') }}</h4>
+    </div>
+
+    <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
+      <h2 id="abstracts" class="mb-3">{{ $t('abstracts.headlineAbstracts') }}</h2>
+      <Container class="my-4">
+        <Row class="mb-3" v-for="(entry, index) in $tm('abstracts.abstracts')" :key="index">
+          <Col col="11">
+          <h4 class="caps secondary">{{ entry.speaker }}</h4>
+          <h3>{{ entry.title }}</h3>
+          <p v-for="(p, i) in entry.text" :key="i">{{ p }}</p>
+          </Col>
+          <Col col="1">
+          <a :href="entry.download">
+            PDF
+          </a>
+          </Col>
+        </Row>
+      </Container>
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
