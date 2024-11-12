@@ -1,6 +1,18 @@
 export default defineI18nConfig(() => ({
   legacy: false,
   autoImportTranslationFunctions: true,
+  datetimeFormats: {
+    en: {
+      short: {
+        hour: 'numeric', minute: 'numeric'
+      }
+    },
+    de: {
+      short: {
+        hour: 'numeric', minute: 'numeric', hour12: false
+      }
+    }
+  },
   messages: {
     de: {
       nav: {
@@ -62,7 +74,7 @@ export default defineI18nConfig(() => ({
       nav: {
         home: "Home",
         cfp: "Call for Papers",
-        program: "Program",
+        program: "Programme",
         plan: "Site plan",
         contact: "Contact"
       },

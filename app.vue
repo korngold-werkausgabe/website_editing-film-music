@@ -9,22 +9,22 @@ const availableLocales = computed(() => {
 
 const data = {
   program: {
-    key: { speaker: 'Ben Winters', title: 'Reflections on the Multimedia Film-Score Edition and the Textual Instability of Film', time: '13:30–14:45', abstract: 'Lorem ipsum' },
-    fr1: [{ speaker: 'Derek Greten-Harrison', title: 'TBA', time: '14:45', abstract: 'Lorem ipsum' },
-    { speaker: 'Simone Nowicki', title: 'Edition von Filmmusik Herausforderungen der Multimedialität (Un-) Sichtbarer Krach: Die Marginalisierung und Visualisierung von Geräuschemacher*innen in der Edition von Filmmusik', time: '15:30', abstract: 'Lorem ipsum' }],
-    fr2: [{ speaker: 'Roberto Calabretto, Luca Cossettini', title: 'The New Musical Writings for Cinema: History, Sources and Compositional Practices', time: '16:45', abstract: 'Lorem ipsum' },
-    { speaker: 'Jörg Holzmann', title: 'Tonfilme, Interpretationsforschung und die Herausforderungen der Notation von Bewegungen', time: '17:30', abstract: 'Lorem ipsum' },],
+    key: { speaker: 'Ben Winters', title: 'Reflections on the Multimedia Film-Score Edition and the Textual Instability of Film', time: { hh: 13, mm: 30 }, abstract: 'Lorem ipsum' },
+    fr1: [{ speaker: 'Derek Greten-Harrison', title: 'TBA', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
+    { speaker: 'Simone Nowicki', title: 'Edition von Filmmusik Herausforderungen der Multimedialität (Un-) Sichtbarer Krach: Die Marginalisierung und Visualisierung von Geräuschemacher*innen in der Edition von Filmmusik', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }],
+    fr2: [{ speaker: 'Roberto Calabretto, Luca Cossettini', title: 'The New Musical Writings for Cinema: History, Sources and Compositional Practices', time: { hh: 16, mm: 45 }, abstract: 'Lorem ipsum' },
+    { speaker: 'Jörg Holzmann', title: 'Tonfilme, Interpretationsforschung und die Herausforderungen der Notation von Bewegungen', time: { hh: 17, mm: 30 }, abstract: 'Lorem ipsum' },],
     sa1: [
-      { speaker: 'Oliver Huck', title: 'Eine Phänomenologie der „Stummfilm-Partitur“. Prolegomena zur Edition von Filmmusik', time: '9:00', abstract: 'Lorem ipsum' },
-      { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: '9:45', abstract: 'Lorem ipsum' },
+      { speaker: 'Oliver Huck', title: 'Eine Phänomenologie der „Stummfilm-Partitur“. Prolegomena zur Edition von Filmmusik', time: { hh: 9, mm: 0 }, abstract: 'Lorem ipsum' },
+      { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: { hh: 9, mm: 45 }, abstract: 'Lorem ipsum' },
 
     ],
-    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: '11:00', abstract: 'Lorem ipsum' },
-    { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: '11:45', abstract: 'Lorem ipsum' }],
+    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, abstract: 'Lorem ipsum' },
+    { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, abstract: 'Lorem ipsum' }],
     sa3: [
-      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: '14:00', abstract: 'Lorem ipsum' },
-      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: '14:45', abstract: 'Lorem ipsum' },
-      { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: '15:30', abstract: 'Lorem ipsum' }
+      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 14, mm: 0 }, abstract: 'Lorem ipsum' },
+      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
+      { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }
     ]
   }
 }
@@ -34,7 +34,7 @@ const data = {
   <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="/website_editing-film-music">
           <img src="./assets/Logo-einfarbig-rgb-150dpi.png" alt="Logo" width="30" height="24"
             class="d-inline-block align-text-top me-1">
           Korngold-Werkausgabe
@@ -47,7 +47,7 @@ const data = {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item me-2">
-              <a class="nav-link active" aria-current="page" href="/">{{ $t('nav.home') }}</a>
+              <a class="nav-link active" aria-current="page" href="/website_editing-film-music">{{ $t('nav.home') }}</a>
             </li>
             <li class="nav-item me-2">
               <a class="nav-link" href="#prgrm">{{ $t('nav.program') }}</a>
@@ -90,7 +90,7 @@ const data = {
       <Container class="mt-5 mb-3 keynote">
         <h4 class="mb-3">{{ $t('prgrm.keynote') }}</h4>
         <Row>
-          <Col col="1">{{ data.program.key.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, data.program.key.time.hh, data.program.key.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ data.program.key.speaker }}</Col>
           <Col col="8">{{ data.program.key.title }}</Col>
         </Row>
@@ -98,17 +98,17 @@ const data = {
       <!-- Block 1 -->
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.fr1" :key="index">
-          <Col col="1">{{ entry.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col>{{ entry.title }}</Col>
+          <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.fr2" :key="index">
-          <Col col="1">{{ entry.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col>{{ entry.title }}</Col>
+          <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
       <!-- Day2 -->
@@ -118,7 +118,7 @@ const data = {
       <!-- Block 2 -->
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa1" :key="index">
-          <Col col="1">{{ entry.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
           <Col col="8">{{ entry.title }}</Col>
         </Row>
@@ -126,7 +126,7 @@ const data = {
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
-          <Col col="1">{{ entry.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
           <Col col="8">{{ entry.title }}</Col>
         </Row>
@@ -135,13 +135,14 @@ const data = {
       <!-- Block 3 -->
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa3" :key="index">
-          <Col col="1">{{ entry.time }}</Col>
+          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
           <Col col="8">{{ entry.title }}</Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
-      <h4 class="my-4 primary">16:45 – 17:30 {{ $t('prgrm.roundtable') }}</h4>
+      <h4 class="my-4 primary">{{ $d(new Date(0, 0, 0, 16, 45, 0), 'short') }}–{{ $d(new Date(0, 0, 0, 17, 30, 0),
+        'short') }} {{ $t('prgrm.roundtable') }}</h4>
     </div>
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
