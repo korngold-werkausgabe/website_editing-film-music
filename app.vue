@@ -1,11 +1,10 @@
 <script setup>
-/* useScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
-useScript('https://code.jquery.com/jquery-3.2.1.slim.min.js') */
-const { locale, locales, setLocale } = useI18n()
+const { $formatMarkdown } = useNuxtApp()
+const { locale, locales, setLocale } = useI18n();
 
 const availableLocales = computed(() => {
   return (locales.value).filter(i => i.code !== locale.value)
-})
+});
 
 const data = {
   program: {
@@ -152,7 +151,7 @@ const data = {
           <Col col="11">
           <h4 class="caps secondary">{{ entry.speaker }}</h4>
           <h3>{{ entry.title }}</h3>
-          <p v-for="(p, i) in entry.text" :key="i">{{ p }}</p>
+          <p v-for="(p, i) in entry.text" :key="i" v-html="$formatMarkdown(p)"></p>
           </Col>
           <Col col="1">
           <a :href="entry.download">
