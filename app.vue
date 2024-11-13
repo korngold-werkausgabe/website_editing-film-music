@@ -146,18 +146,29 @@ const data = {
 
     <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
       <h2 id="abstracts" class="mb-3">{{ $t('abstracts.headlineAbstracts') }}</h2>
-      <Container class="my-4">
-        <Row class="mb-3" v-for="(entry, index) in $tm('abstracts.abstracts')" :key="index">
-          <Col col="11">
-          <h4 class="caps secondary">{{ entry.speaker }}</h4>
-          <h3>{{ entry.title }}</h3>
-          <p v-for="(p, i) in entry.text" :key="i" v-html="$formatMarkdown(p)"></p>
+      <Container class="my-4 keynote">
+        <h4 class="mb-3">Keynote</h4>
+        <Row>
+          <Col col="12">
+          <h4 class="caps secondary">{{ $t('abstracts.keynote.speaker') }}</h4>
+          <h3 class="my-3">{{ $t('abstracts.keynote.title') }}</h3>
+          <p class="mb-0" v-for="(p, i) in $tm('abstracts.keynote.text')" :key="i" v-html="$formatMarkdown(p)"></p>
           </Col>
-          <Col col="1">
+        </Row>
+      </Container>
+      <Container class="my-4">
+        <Row class="mb-4" v-for="(entry, index) in $tm('abstracts.abstracts')" :key="index">
+          <Col col="12">
+          <h4 class="caps secondary">{{ entry.speaker }}</h4>
+          <h3 class="my-3">{{ entry.title }}</h3>
+          <p v-for="(p, i) in entry.text" :key="i" v-html="$formatMarkdown(p)">
+          </p>
+          </Col>
+          <!-- <Col col="1">
           <a :href="entry.download">
             PDF
           </a>
-          </Col>
+          </Col> -->
         </Row>
       </Container>
     </div>
