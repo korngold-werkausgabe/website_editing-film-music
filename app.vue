@@ -23,7 +23,7 @@ const data = {
     sa3: [
       { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 14, mm: 0 }, abstract: 'Lorem ipsum' },
       { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
-      { speaker: 'Dennis Friedl', title: 'Multimedialität in der Editionssoftware Edirom-Online. Voraussetzungen und Möglichkeiten.', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }
+      { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }
     ]
   },
 }
