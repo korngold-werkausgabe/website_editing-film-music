@@ -8,22 +8,22 @@ const availableLocales = computed(() => {
 
 const data = {
   program: {
-    key: { speaker: 'Ben Winters', title: 'Reflections on the Multimedia Film-Score Edition and the Textual Instability of Film', time: { hh: 13, mm: 30 }, abstract: 'Lorem ipsum' },
-    fr1: [{ speaker: 'Derek Greten-Harrison', title: 'TBA', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
-    { speaker: 'Simone Nowicki', title: 'Edition von Filmmusik Herausforderungen der Multimedialität (Un-) Sichtbarer Krach: Die Marginalisierung und Visualisierung von Geräuschemacher*innen in der Edition von Filmmusik', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }],
-    fr2: [{ speaker: 'Roberto Calabretto, Luca Cossettini', title: 'The New Musical Writings for Cinema: History, Sources and Compositional Practices', time: { hh: 16, mm: 45 }, abstract: 'Lorem ipsum' },
-    { speaker: 'Jörg Holzmann', title: 'Tonfilme, Interpretationsforschung und die Herausforderungen der Notation von Bewegungen', time: { hh: 17, mm: 30 }, abstract: 'Lorem ipsum' },],
+    key: { speaker: 'Ben Winters', title: 'Reflections on the Multimedia Film-Score Edition and the Textual Instability of Film', time: { hh: 13, mm: 30 }, id: "winters" },
+    fr1: [{ speaker: 'Derek Greten-Harrison', title: "The 20th Century-Fox Songbook: Restoring a Hollywood Studio's Musical Legacy", time: { hh: 14, mm: 45 }, id: "harrison" },
+    { speaker: 'Simone Nowicki', title: 'Edition von Filmmusik Herausforderungen der Multimedialität (Un-) Sichtbarer Krach: Die Marginalisierung und Visualisierung von Geräuschemacher*innen in der Edition von Filmmusik', time: { hh: 15, mm: 30 }, id: "nowicki" }],
+    fr2: [{ speaker: 'Roberto Calabretto, Luca Cossettini', title: 'The New Musical Writings for Cinema: History, Sources and Compositional Practices', time: { hh: 16, mm: 45 }, id: "calabretto" },
+    { speaker: 'Jörg Holzmann', title: 'Tonfilme, Interpretationsforschung und die Herausforderungen der Notation von Bewegungen', time: { hh: 17, mm: 30 }, id: "holzmann" },],
     sa1: [
-      { speaker: 'Oliver Huck', title: 'Eine Phänomenologie der „Stummfilm-Partitur“. Prolegomena zur Edition von Filmmusik', time: { hh: 9, mm: 0 }, abstract: 'Lorem ipsum' },
-      { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: { hh: 9, mm: 45 }, abstract: 'Lorem ipsum' },
+      { speaker: 'Oliver Huck', title: 'Eine Phänomenologie der „Stummfilm-Partitur“. Prolegomena zur Edition von Filmmusik', time: { hh: 9, mm: 0 }, id: "huck" },
+      { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: { hh: 9, mm: 45 }, id: "mueller" },
 
     ],
-    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, abstract: 'Lorem ipsum' },
-    { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, abstract: 'Lorem ipsum' }],
+    sa2: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
+    { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, id: "ried" }],
     sa3: [
-      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 14, mm: 0 }, abstract: 'Lorem ipsum' },
-      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, abstract: 'Lorem ipsum' },
-      { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 30 }, abstract: 'Lorem ipsum' }
+      { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 14, mm: 0 }, id: "berndt" },
+      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, id: "gengnagel" },
+      { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 30 }, id: "friedl" }
     ]
   },
 }
@@ -88,26 +88,33 @@ const data = {
       <!-- Keynote -->
       <Container class="mt-5 mb-3 keynote">
         <h4 class="mb-3">{{ $t('prgrm.keynote') }}</h4>
-        <Row>
-          <Col col="1">{{ $d(new Date(0, 0, 0, data.program.key.time.hh, data.program.key.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ data.program.key.speaker }}</Col>
-          <Col col="8">{{ data.program.key.title }}</Col>
+        <Row :id="data.program.key.id">
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, data.program.key.time.hh, data.program.key.time.mm, 0), 'short') }}
+            </Col>
+            <Col col="3">{{ data.program.key.speaker }}</Col>
+            <Col col="8">{{ data.program.key.title }}</Col>
+          </a>
         </Row>
       </Container>
       <!-- Block 1 -->
       <Container class="my-4">
-        <Row class="mb-2" v-for="(entry, index) in data.program.fr1" :key="index">
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8">{{ entry.title }}</Col>
+        <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.fr1" :key="index">
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
+            <Col col="3">{{ entry.speaker }}</Col>
+            <Col col="8">{{ entry.title }}</Col>
+          </a>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
-        <Row class="mb-2" v-for="(entry, index) in data.program.fr2" :key="index">
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8">{{ entry.title }}</Col>
+        <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.fr2" :key="index">
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
+            <Col col="3">{{ entry.speaker }}</Col>
+            <Col col="8">{{ entry.title }}</Col>
+          </a>
         </Row>
       </Container>
       <!-- Day2 -->
@@ -116,27 +123,33 @@ const data = {
       </h4>
       <!-- Block 2 -->
       <Container class="my-4">
-        <Row class="mb-2" v-for="(entry, index) in data.program.sa1" :key="index">
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8">{{ entry.title }}</Col>
+        <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.sa1" :key="index">
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
+            <Col col="3">{{ entry.speaker }}</Col>
+            <Col col="8">{{ entry.title }}</Col>
+          </a>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <Container class="my-4">
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8">{{ entry.title }}</Col>
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
+            <Col col="3">{{ entry.speaker }}</Col>
+            <Col col="8">{{ entry.title }}</Col>
+          </a>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
       <!-- Block 3 -->
       <Container class="my-4">
-        <Row class="mb-2" v-for="(entry, index) in data.program.sa3" :key="index">
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8">{{ entry.title }}</Col>
+        <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.sa3" :key="index">
+          <a class="none" :href="'#' + data.program.key.id + '-abs'">
+            <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
+            <Col col="3">{{ entry.speaker }}</Col>
+            <Col col="8">{{ entry.title }}</Col>
+          </a>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
@@ -148,19 +161,24 @@ const data = {
       <h2 id="abstracts" class="mb-3">{{ $t('abstracts.headlineAbstracts') }}</h2>
       <Container class="my-4 keynote">
         <h4 class="mb-3">Keynote</h4>
-        <Row>
+        <Row :id="$t('abstracts.keynote.id') + '-abs'">
           <Col col="12">
           <h4 class="caps secondary">{{ $t('abstracts.keynote.speaker') }}</h4>
-          <h3 class="my-3">{{ $t('abstracts.keynote.title') }}</h3>
+          <a class="none" :href="'#' + $t('abstracts.keynote.id')">
+            <h3 class="my-3">{{ $t('abstracts.keynote.title') }}</h3>
+          </a>
           <p class="mb-0" v-for="(p, i) in $tm('abstracts.keynote.text')" :key="i" v-html="$formatMarkdown(p)"></p>
           </Col>
         </Row>
       </Container>
       <Container class="my-4">
-        <Row class="mb-4" v-for="(entry, index) in $tm('abstracts.abstracts')" :key="index">
+        <Row class="mb-4" v-for="(entry, index) in $tm('abstracts.abstracts')" :key="index"
+          :id="'#' + entry.id + '-abs'">
           <Col col="12">
           <h4 class="caps secondary">{{ entry.speaker }}</h4>
-          <h3 class="my-3">{{ entry.title }}</h3>
+          <a class="none" :href="'#' + entry.id">
+            <h3 class="my-3">{{ entry.title }}</h3>
+          </a>
           <p v-for="(p, i) in entry.text" :key="i" v-html="$formatMarkdown(p)">
           </p>
           </Col>

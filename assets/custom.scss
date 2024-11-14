@@ -62,55 +62,65 @@ a:hover{
     color: $secondary-light-2;
 }
 
+.none {
+    text-decoration: none;
+}
+
+.none:hover {
+    text-decoration: none;
+    color: $primary;
+}
+
 p {
     white-space: pre-line;
     text-align: justify;
  }
 
- .bold {
-    font-weight: 500;
-    font-stretch: semi-expanded;
- }
+.bold {
+font-weight: 500;
+font-stretch: semi-expanded;
+}
 
- .it {
-    font-stretch: semi-expanded;
-    font-style: italic;
- }
+.it {
+font-stretch: semi-expanded;
+font-style: italic;
+}
 
- .light {
-    font-weight: 100;
- }
+.light {
+font-weight: 100;
+}
 
- .row-border {
-    border-top: 1px solid $secondary;
-    border-bottom: 1px solid $secondary;
-    margin: 2em;
- }
+.row-border {
+border-top: 1px solid $secondary;
+border-bottom: 1px solid $secondary;
+margin: 2em;
+}
 
- .font-center {
-    text-align: center;
- }
+.font-center {
+text-align: center;
+}
 
- .cfp {
-    font-size: 1.2em;
-    font-stretch: semi-expanded;
-    font-weight: 300;
- }
+.cfp {
+font-size: 1.2em;
+font-stretch: semi-expanded;
+font-weight: 300;
+}
 
-  .primary {
-    color: $primary-light-2;
-  }
+.primary {
+color: $primary-light-2;
+}
 
-  .secondary {
-    color: $secondary;
-  }
+.secondary {
+color: $secondary;
+}
 
-  .keynote {
-    border: 1px solid $secondary;
-    padding: 1em;
-  }
+.keynote {
+border: 1px solid $secondary;
+padding: 1em;
+}
 
-  .caps {
-    letter-spacing: .1em;
-    font-variant: small-caps;
-  }
+.caps {
+letter-spacing: .1em;
+font-variant: small-caps;
+}
+
