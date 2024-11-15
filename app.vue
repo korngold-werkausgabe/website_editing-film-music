@@ -36,7 +36,7 @@ const data = {
         <a class="navbar-brand" href="/website_editing-film-music">
           <img src="./assets/Logo-einfarbig-rgb-150dpi.png" alt="Logo" width="30" height="24"
             class="d-inline-block align-text-top me-1">
-          Korngold-Werkausgabe
+          Editing Film Music
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -68,6 +68,7 @@ const data = {
     </nav>
 
     <div class="my-3 mx-lg-6 mx-md-5 mx-sm-3">
+      <h1 class="sup">{{ $t('headlineSup') }}</h1>
       <h1 class="main">{{ $t('headlineMain') }} </h1>
       <h1 class="sub">{{ $t('headlineSub') }}</h1>
       <i18n-t keypath="msg1" tag="p">
