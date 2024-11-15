@@ -102,7 +102,7 @@ const data = {
         <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.fr1" :key="index">
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + data.program.key.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
@@ -111,7 +111,7 @@ const data = {
 
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + data.program.key.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
         </Row>
       </Container>
       <!-- Day2 -->
@@ -124,7 +124,7 @@ const data = {
 
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + data.program.key.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
@@ -132,7 +132,7 @@ const data = {
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2" :key="index">
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + data.program.key.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
@@ -141,7 +141,7 @@ const data = {
         <Row :id="entry.id" class="mb-2" v-for="(entry, index) in data.program.sa3" :key="index">
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + data.program.key.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
