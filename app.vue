@@ -32,8 +32,9 @@ const data = {
       { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, id: "gengnagel" },
       { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 30 }, id: "friedl" }
       ]
-    }
+    },
   },
+  roundtable: ["Dennis Friedl", "Tessa Gengnagel", "Oliver Huck", "Andreas Münzmay", "Dennis Ried", "Ben Winters"]
 }
 </script>
 
@@ -157,10 +158,14 @@ const data = {
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
       <h4 class="my-4 primary">{{ $d(new Date(0, 0, 0, 16, 45, 0), 'short') }}–{{ $d(new Date(0, 0, 0, 17, 30, 0),
         'short') }} {{ $t('prgrm.roundtable') }}</h4>
+      <p class="ms-2"><span v-for="(person, i) in data.roundtable" :key="i">{{ person }}<span
+            v-if="i < data.roundtable.length - 1">,
+          </span></span>
+      </p>
     </div>
 
-    <div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
-      <h2 id="abstracts" class="mb-3">{{ $t('abstracts.headlineAbstracts') }}</h2>
+    <div div class="mt-5 mb-3  mx-lg-6 mx-md-5 mx-sm-3">
+      <h2 id="abstracts" class="mb-3"> {{ $t('abstracts.headlineAbstracts') }}</h2>
       <Container class="my-4 keynote">
         <h4 class="mb-3">Keynote</h4>
         <Row :id="$t('abstracts.keynote.id') + '-abs'">
