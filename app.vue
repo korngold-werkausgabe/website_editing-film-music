@@ -24,13 +24,13 @@ const data = {
     },
     sa2: {
       chair: "Sandra Kebig", lectures: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Editing. The Case of „The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
-      { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, id: "ried" }]
+      { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, id: "ried" }, { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 11, mm: 45 }, id: "berndt" },]
     },
     sa3:
     {
-      chair: "Gabriele Groll", lectures: [{ speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 14, mm: 0 }, id: "berndt" },
-      { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 45 }, id: "gengnagel" },
-      { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 30 }, id: "friedl" }
+      chair: "Gabriele Groll", lectures: [
+        { speaker: 'Tessa Gengnagel', title: 'Superstrukturen', time: { hh: 14, mm: 15 }, id: "gengnagel" },
+        { speaker: 'Dennis Friedl', title: 'Multimedia in the Scholarly Editing Software Edirom-Online. Current and Future Possibilities', time: { hh: 15, mm: 0 }, id: "friedl" }
       ]
     },
   },
@@ -140,9 +140,17 @@ const data = {
       <Container class="my-4">
         <h4 class="chair">Chair: {{ data.program.sa2.chair }}</h4>
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2.lectures" :key="index">
+
           <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
           <Col col="3">{{ entry.speaker }}</Col>
-          <Col col="8"><a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a></Col>
+          <Col col="8">
+          <span v-if="entry.id === 'ried'">
+            <a class="none strike-through" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a> {{ $t('illness') }}
+          </span>
+          <span v-else>
+            <a class="none" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a>
+          </span>
+          </Col>
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause2') }}</p>
@@ -156,7 +164,7 @@ const data = {
         </Row>
       </Container>
       <p class="it font-center">{{ $t('prgrm.pause1') }}</p>
-      <h4 class="my-4 primary">{{ $d(new Date(0, 0, 0, 16, 45, 0), 'short') }}–{{ $d(new Date(0, 0, 0, 17, 30, 0),
+      <h4 class="my-4 primary">{{ $d(new Date(0, 0, 0, 16, 15, 0), 'short') }}–{{ $d(new Date(0, 0, 0, 17, 15, 0),
         'short') }} {{ $t('prgrm.roundtable') }}</h4>
       <p class="ms-2"><span v-for="(person, i) in data.roundtable" :key="i">{{ person }}<span
             v-if="i < data.roundtable.length - 1">,
