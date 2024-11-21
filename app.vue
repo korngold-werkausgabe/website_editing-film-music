@@ -23,7 +23,7 @@ const data = {
         { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: { hh: 9, mm: 45 }, id: "mueller" }]
     },
     sa2: {
-      chair: "Sandra Kebig", lectures: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Edition of “The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
+      chair: "Sandra Kebig", lectures: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Editing. The Case of „The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
       { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, id: "ried" }]
     },
     sa3:
