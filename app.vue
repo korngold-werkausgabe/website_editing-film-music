@@ -142,8 +142,10 @@ const data = {
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2.lectures" :key="index">
 
           <Col col="1"><span v-if="entry.id === 'ried'" class="strike-through">{{ $d(new Date(0, 0, 0, entry.time.hh,
-            entry.time.mm, 0), 'short') }}</span></Col>
-          <Col col="3"><span v-if="entry.id === 'ried'" class="strike-through">{{ entry.speaker }}</span></Col>
+            entry.time.mm, 0), 'short') }}</span><span v-else>{{ $d(new Date(0, 0, 0, entry.time.hh,
+              entry.time.mm, 0), 'short') }}</span></Col>
+          <Col col="3"><span v-if="entry.id === 'ried'" class="strike-through">{{ entry.speaker }}</span><span v-else>{{
+            entry.speaker }}</span></Col>
           <Col col="8">
           <span v-if="entry.id === 'ried'">
             <a class="none strike-through" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a> {{ $t('illness') }}
