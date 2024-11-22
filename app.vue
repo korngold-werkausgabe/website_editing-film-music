@@ -23,7 +23,7 @@ const data = {
         { speaker: 'Fabian Müller', title: 'Komponieren und Inkorporieren. Herausforderungen der Edition von Musik und Film am Beispiel von Joseph Carl Breil', time: { hh: 9, mm: 45 }, id: "mueller" }]
     },
     sa2: {
-      chair: "Sandra Kebig", lectures: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Editing. The Case of „The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
+      chair: "Sandra Kebig", lectures: [{ speaker: 'Johannes C. Gall, Silke Reich', title: 'Hybrid Film Music Editing. The Case of “The Adventures of Robin Hood”', time: { hh: 11, mm: 0 }, id: "gall" },
       { speaker: 'Dennis Ried', title: 'Hybride Edition – Der Inbegriff von Multimedialität?', time: { hh: 11, mm: 45 }, id: "ried" }, { speaker: 'Axel Berndt, Andreas Münzmay', title: 'Digitale Interpretationsedition und Filmmusikedition als multimodale Schwestern – Gemeinsame Herausforderungen und Lösungsansätze', time: { hh: 11, mm: 45 }, id: "berndt" },]
     },
     sa3:
@@ -141,8 +141,9 @@ const data = {
         <h4 class="chair">Chair: {{ data.program.sa2.chair }}</h4>
         <Row class="mb-2" v-for="(entry, index) in data.program.sa2.lectures" :key="index">
 
-          <Col col="1">{{ $d(new Date(0, 0, 0, entry.time.hh, entry.time.mm, 0), 'short') }}</Col>
-          <Col col="3">{{ entry.speaker }}</Col>
+          <Col col="1"><span v-if="entry.id === 'ried'" class="strike-through">{{ $d(new Date(0, 0, 0, entry.time.hh,
+            entry.time.mm, 0), 'short') }}</span></Col>
+          <Col col="3"><span v-if="entry.id === 'ried'" class="strike-through">{{ entry.speaker }}</span></Col>
           <Col col="8">
           <span v-if="entry.id === 'ried'">
             <a class="none strike-through" :href="'#' + entry.id + '-abs'">{{ entry.title }}</a> {{ $t('illness') }}
