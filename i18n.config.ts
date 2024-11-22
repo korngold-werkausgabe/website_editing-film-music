@@ -28,6 +28,7 @@ export default defineI18nConfig(() => ({
       msg1: "Die Edition der Filmmusik von Erich Wolfgang Korngold bildet einen zentralen Bestandteil der dem Komponisten gewidmeten Werkausgabe ({website}). Verbunden damit sind Herausforderungen der Multimedialität, die den Anlass für eine interdisziplinäre Erkundung des Themenkomplexes bieten.",
       msg2: "Film ist ein multimediales Phänomen. Schon der Soundtrack umfasst neben der Musik weitere auditive Elemente, darunter den gesprochenen Dialog. Auf der visuellen Ebene kommen Bild, Bewegung, Interaktion und andere performative Parameter hinzu. Für Forscher:innen aus verschiedenen Disziplinen ergeben sich daraus in editorischer Hinsicht ganz neue Möglichkeiten. Neben den üblichen Aufgaben der Edition müssen Fragen der multimedialen Wechselwirkung/Synchronisation sowie der Rekonstruktion historischer Entstehungszusammenhänge berücksichtigt werden, was umgekehrt bedeutet, für die Darstellung das Potential digitaler oder hybrider Präsentationsformate auszuloten.",
       msg3: "Ziel der Tagung ist es, den aktuellen Stand der Forschung zur multimedialen Edition von Filmmusik zu diskutieren, weiterführende Impulse zu geben und innovative Modelle zu entwickeln. Dabei soll auch die Frage erörtert werden, wie sich multimediale Werke und multimediale Editionen wechselseitig beeinflussen.",
+      illness: "[entfällt wegen Krankheit]",
       headlineCfp: "Call for Papers",
       cfpInfo: {
         place: {
@@ -102,6 +103,7 @@ export default defineI18nConfig(() => ({
       msg1: "The edition of Erich Wolfgang Korngold’s film music is a central part of the Werkausgabe dedicated to the composer ({website}). The undertaking presents unique challenges in multimediality, inviting an interdisciplinary exploration of this complex subject.",
       msg2: "Film is a multimedia phenomenon. A soundtrack alone comprises music along with other auditory elements such as spoken dialogue. On the visual level, it encompasses images, movement, interaction, and other performative parameters. These aspects open up new editorial possibilities for researchers in various disciplines. In addition to traditional editing work, considerations of multimedia interaction/synchronisation and the reconstruction of historical production practices must be addressed, which in turn means exploring the potential of digital or hybrid presentation formats for effective representation.",
       msg3: "The conference aims to discuss the current state of research on the multimedia edition of film music, provide new impulses, and develop innovative models. One key question to be addressed is how multimedia works and multimedia editions influence each other.",
+      illness: "[cancelled due to illness]",
       headlineCfp: "Call for Papers",
       cfpInfo: {
         place: {
