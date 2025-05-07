@@ -1,0 +1,27 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Website Editing Film Music
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - orcid: 'https://orcid.org/0009-0007-8817-0299'
+    given-names: Silke
+    family-names: Reich
+    email: diginaut@protonmail.com
+repository-code: >-
+  https://github.com/korngold-werkausgabe/website_editing-film-music
+url: >-
+  https://korngold-werkausgabe.github.io/website_editing-film-music
+abstract: >-
+  This is the repository for the conference website "Editing
+  Film Music". The conference was hosted by the Frankfurt
+  office of the Korngold-Werkausgabe in November 2024 at
+  Goethe-University.
+keywords:
+  - film music
+  - edition
+license: CC-BY-NC-4.0
